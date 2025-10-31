@@ -1,0 +1,46 @@
+/* minerva - Global CSS Variables Only */
+/* All component styles have been moved to component-specific *.module.css files */
+
+:root {
+    /* Colors */
+    --minerva-bg-white: rgba(255, 255, 255, 0.7);
+    --minerva-text-dark: #1a1a1a;
+    --minerva-text-muted: #4a4a4a;
+    --minerva-border-light: rgba(255, 255, 255, 0.8);
+    --minerva-border-subtle: rgba(0, 0, 0, 0.1);
+    --minerva-button-bg: rgba(0, 0, 0, 0.05);
+
+    /* Gradients */
+    --minerva-gradient-primary: linear-gradient(
+        135deg,
+        #1a2332 0%,
+        #000000 100%
+    );
+    --minerva-gradient-primary-reverse: linear-gradient(
+        135deg,
+        #000000 0%,
+        #1a2332 100%
+    );
+    --minerva-gradient-danger: linear-gradient(
+        135deg,
+        #ff6b6b 0%,
+        #ee5a6f 100%
+    );
+    --minerva-gradient-midnight-blue: linear-gradient(
+        135deg,
+        #1a237e 0%,
+        #283593 50%,
+        #3949ab 100%
+    );
+
+    /* Shadows */
+    --minerva-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --minerva-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --minerva-shadow-button: 0 4px 12px rgba(102, 126, 234, 0.3);
+    --minerva-shadow-button-hover: 0 6px 20px rgba(102, 126, 234, 0.4);
+    --minerva-shadow-danger: 0 4px 12px rgba(255, 107, 107, 0.3);
+
+    /* Transitions */
+    --minerva-transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --minerva-transition-fade: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

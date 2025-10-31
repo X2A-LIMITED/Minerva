@@ -1,0 +1,40 @@
+/* Expand Group Component Styles */
+
+.group {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 0.3s ease-in-out,
+        padding 0.3s ease-in-out,
+        opacity 0.2s ease-in-out,
+        margin 0.3s ease-in-out;
+    padding: 0;
+    cursor: auto;
+    will-change: max-height, opacity, margin;
+}
+
+.group.expanded {
+    max-height: 400px;
+    opacity: 1;
+    overflow: visible;
+}
+
+.group.container {
+    margin-top: 0;
+    transition: var(--minerva-transition-smooth);
+}
+
+.group.container.expanded {
+    margin-top: 12px;
+    transition: var(--minerva-transition-smooth);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+}

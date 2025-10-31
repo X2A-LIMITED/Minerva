@@ -1,0 +1,90 @@
+<svg width="400" height="512" viewBox="0 0 400 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filters for blurred color blobs -->
+    <filter id="filter0" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter1" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="37" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <!-- Mask for the light bulb -->
+    <mask id="bulbMask" maskUnits="userSpaceOnUse">
+      <!-- Main bulb shape (rounded top) - diameter 360px = radius 180px -->
+      <circle cx="200" cy="180" r="180" fill="white"/>
+      
+      <!-- Neck of bulb -->
+      <rect x="155" y="342" width="90" height="48" fill="white"/>
+      
+      <!-- Screw base threads -->
+      <rect x="141" y="390" width="118" height="17" rx="3" fill="white"/>
+      <rect x="141" y="412" width="118" height="17" rx="3" fill="white"/>
+      <rect x="141" y="434" width="118" height="17" rx="3" fill="white"/>
+      
+      <!-- Bottom cap -->
+      <ellipse cx="200" cy="462" rx="59" ry="16" fill="white"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#bulbMask)">
+    <!-- Strong RED presence (LEFT SIDE - centered vertically) - shifted another 30px right -->
+    <ellipse cx="145" cy="180" rx="200" ry="200" fill="#FF0000" filter="url(#filter0)"/>
+    <ellipse cx="165" cy="175" rx="185" ry="185" fill="#FF1744" filter="url(#filter1)"/>
+    <ellipse cx="155" cy="185" rx="190" ry="190" fill="#FF0022" filter="url(#filter2)"/>
+    <ellipse cx="170" cy="170" rx="175" ry="175" fill="#FF2244" filter="url(#filter3)"/>
+    <ellipse cx="160" cy="190" rx="180" ry="180" fill="#FF3355" filter="url(#filter1)"/>
+
+    <!-- PINK layer -->
+    <ellipse cx="180" cy="180" rx="165" ry="165" fill="#FF4D6D" filter="url(#filter1)"/>
+    <ellipse cx="190" cy="175" rx="155" ry="155" fill="#FF5370" filter="url(#filter2)"/>
+
+    <!-- ORANGE transition - very prominent -->
+    <ellipse cx="200" cy="180" rx="158" ry="158" fill="#FF6600" filter="url(#filter1)"/>
+    <ellipse cx="210" cy="185" rx="153" ry="153" fill="#FF7700" filter="url(#filter2)"/>
+    <ellipse cx="205" cy="175" rx="148" ry="148" fill="#FF8800" filter="url(#filter1)"/>
+    <ellipse cx="215" cy="190" rx="143" ry="143" fill="#FF9933" filter="url(#filter3)"/>
+
+    <!-- YELLOW -->
+    <ellipse cx="230" cy="185" rx="143" ry="143" fill="#FFBB00" filter="url(#filter1)"/>
+    <ellipse cx="240" cy="180" rx="138" ry="138" fill="#FFCC00" filter="url(#filter2)"/>
+    <ellipse cx="245" cy="190" rx="133" ry="133" fill="#FFDD00" filter="url(#filter1)"/>
+
+    <!-- Yellow-green blend -->
+    <ellipse cx="255" cy="180" rx="133" ry="133" fill="#CCEE00" filter="url(#filter2)"/>
+    <ellipse cx="260" cy="175" rx="128" ry="128" fill="#AADD00" filter="url(#filter1)"/>
+
+    <!-- GREEN -->
+    <ellipse cx="270" cy="180" rx="138" ry="138" fill="#00DD44" filter="url(#filter2)"/>
+    <ellipse cx="280" cy="175" rx="133" ry="133" fill="#00DD66" filter="url(#filter1)"/>
+
+    <!-- CYAN/Turquoise -->
+    <ellipse cx="295" cy="180" rx="138" ry="138" fill="#00CCBB" filter="url(#filter2)"/>
+    <ellipse cx="310" cy="175" rx="133" ry="133" fill="#00BBDD" filter="url(#filter1)"/>
+
+    <!-- BLUE - less wide -->
+    <ellipse cx="325" cy="180" rx="128" ry="128" fill="#0099FF" filter="url(#filter2)"/>
+    <ellipse cx="340" cy="175" rx="133" ry="133" fill="#2196F3" filter="url(#filter0)"/>
+    <ellipse cx="350" cy="180" rx="118" ry="118" fill="#4488FF" filter="url(#filter1)"/>
+
+    <!-- Purple/Indigo - less wide -->
+    <ellipse cx="355" cy="170" rx="110" ry="110" fill="#6677FF" filter="url(#filter2)"/>
+    <ellipse cx="365" cy="165" rx="105" ry="105" fill="#7BA3FF" filter="url(#filter1)"/>
+  </g>
+</svg>

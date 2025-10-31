@@ -1,0 +1,31 @@
+/* Selection Rectangle Component Styles */
+
+.rect {
+    position: absolute;
+    border: 2px solid #4a90e2;
+    background: rgba(74, 144, 226, 0.1);
+    display: none;
+    pointer-events: none;
+}
+
+/* Shimmer Effect Variant */
+.rect.shimmer {
+    border: 2px solid #667eea;
+    background: linear-gradient(
+        90deg,
+        rgba(102, 126, 234, 0.1) 0%,
+        rgba(118, 75, 162, 0.15) 50%,
+        rgba(102, 126, 234, 0.1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmerSelection 2s ease-in-out infinite;
+}
+
+@keyframes shimmerSelection {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

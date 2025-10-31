@@ -1,0 +1,1075 @@
+/* Shared Summarizer Styles - Enhanced Glassmorphic Design */
+
+.container {
+    width: 540px;
+    max-height: 90vh;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Performance optimization: use GPU acceleration */
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.container:hover {
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.18),
+        0 10px 20px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Disable heavy effects while dragging for better performance */
+:global(.is-dragging) .container,
+:global(.is-dragging).container {
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    transition: none !important;
+}
+
+:global(.is-dragging) * {
+    pointer-events: none !important;
+}
+
+.contentWrapper {
+    padding: 32px;
+    overflow-y: auto;
+    flex: 1;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.contentWrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contentWrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Header Section */
+.header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Input Section */
+.inputGroup {
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #2c2c2c;
+}
+
+.textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    resize: vertical;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.textarea::placeholder {
+    color: #999;
+}
+
+.select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.select:active {
+    cursor:
+        url('/icons/tldr-loop.svg') 12 12,
+        pointer;
+}
+
+/* Button Styles */
+.button {
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.6s,
+        height 0.6s;
+}
+
+.button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.buttonPrimary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.buttonPrimary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.35);
+}
+
+.buttonPrimary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.buttonPrimary:disabled {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.buttonSuccess {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    padding: 8px 16px;
+    font-size: 14px;
+    width: auto;
+}
+
+.buttonSuccess:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.buttonDanger {
+    background: linear-gradient(135deg, #dc3545 0%, #bd2130 100%);
+    padding: 8px 16px;
+    font-size: 14px;
+    width: auto;
+}
+
+.buttonDanger:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Error Message */
+.errorBox {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(220, 53, 69, 0.08);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    border-radius: 10px;
+    color: #dc3545;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Summary Display */
+.summarySection {
+    margin-top: 28px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.summaryTitle {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.summaryContent {
+    padding: 16px;
+    background: rgba(248, 249, 250, 0.95);
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* API Key Section */
+.apiKeySection {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: rgba(249, 249, 249, 0.98);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.apiKeyTitle {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #2c2c2c;
+}
+
+.apiKeyDescription {
+    font-size: 12px;
+    margin: 0 0 12px 0;
+    color: #666;
+}
+
+.apiKeyInput {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.apiKeyInput:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buttonSecondary {
+    background: rgba(108, 117, 125, 0.1);
+    border: 1px solid rgba(108, 117, 125, 0.3);
+    color: #495057;
+}
+
+.buttonSecondary:hover:not(:disabled) {
+    background: rgba(108, 117, 125, 0.2);
+    transform: translateY(-1px);
+}
+
+.apiKeyStatus {
+    margin-top: 12px;
+    color: #28a745;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Upload Section */
+.uploadSection {
+    margin-bottom: 28px;
+}
+
+/* Loading State */
+.loadingWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(240, 240, 240, 0.8) 0%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(240, 240, 240, 0.8) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 10px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Audio Player */
+.audioPlayer {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 8px;
+}
+
+/* Generated Image */
+.generatedImage {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 12px;
+    transition: transform 0.3s ease;
+}
+
+.generatedImage:hover {
+    transform: scale(1.02);
+}
+
+/* History Navigation */
+.historyHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.navControls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navButton {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    border-radius: 8px;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: 600;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navButton:hover:not(:disabled) {
+    background: rgba(0, 123, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.navButton:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.navPosition {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c2c2c;
+    min-width: 50px;
+    text-align: center;
+}
+
+.navControlsInlineDark {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+}
+
+.navButtonInlineDark {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 600;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navButtonInlineDark:hover:not(:disabled) {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.navButtonInlineDark:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.navPositionInlineDark {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    min-width: 32px;
+    text-align: center;
+}
+
+/* Card Layout */
+.resultCard {
+    position: relative;
+    background: rgba(248, 249, 250, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.resultCard:last-child {
+    margin-bottom: 0;
+}
+
+.resultCard:hover {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Floating Copy Button in Result Card */
+.cardCopyButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    border-radius: 8px;
+    color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.resultCard:hover .cardCopyButton {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.cardCopyButton:hover {
+    background: rgba(0, 123, 255, 0.2);
+    transform: scale(1.1) !important;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.25);
+}
+
+.cardCopyButton:active {
+    transform: scale(0.95) !important;
+}
+
+.cardLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+}
+
+.cardContent {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #2c2c2c;
+    white-space: pre-wrap;
+    padding-right: 40px;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    animation: slideInRight 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 350px;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toastSuccess {
+    border-left: 4px solid #28a745;
+}
+
+.toastError {
+    border-left: 4px solid #dc3545;
+}
+
+.toastInfo {
+    border-left: 4px solid #007bff;
+}
+
+.toastIcon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.toastMessage {
+    font-size: 14px;
+    color: #2c2c2c;
+    line-height: 1.5;
+}
+
+/* Compact Mode */
+.compactHeader {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.compactHeader:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.compactTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.compactToggle {
+    font-size: 18px;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.compactToggle.expanded {
+    transform: rotate(180deg);
+}
+
+/* Enhanced Input Styles */
+.inputWithIcon {
+    position: relative;
+}
+
+.inputIcon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* Copy Button */
+.copyButton {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    border-radius: 8px;
+    color: #007bff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+    background: rgba(0, 123, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.copyButton:active {
+    transform: translateY(0);
+}
+
+/* Language Selector */
+.languageSelector {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.languageField {
+    flex: 1;
+}
+
+/* Modern Close Button */
+.closeButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: rgba(25, 25, 112, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(25, 25, 112, 0.2);
+    border-radius: 6px;
+    color: midnightblue;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    line-height: 1;
+}
+
+.closeButton:hover {
+    background: linear-gradient(135deg, midnightblue 0%, #00008b 100%);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(25, 25, 112, 0.35);
+    border-color: transparent;
+}
+
+.closeButton:active {
+    transform: scale(0.95);
+}
+
+/* Image Generator Enhancements */
+.imagePreview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-top: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 123, 255, 0.05) 0%,
+        rgba(102, 126, 234, 0.05) 100%
+    );
+    padding: 4px;
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.imageWrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Floating Download Button Inside Image */
+.imageDownloadButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.imageWrapper:hover .imageDownloadButton {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.imageDownloadButton:hover {
+    background: rgba(0, 0, 0, 0.85);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.imageDownloadButton:active {
+    transform: scale(0.95);
+}
+
+/* Floating Copy Button Inside Image (top-left) */
+.imageCopyButton {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.imageWrapper:hover .imageCopyButton {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.imageCopyButton:hover {
+    background: rgba(0, 0, 0, 0.85);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.imageCopyButton:active {
+    transform: scale(0.95);
+}
+
+/* Audio Preview - Similar to Image Preview */
+.audioPreview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-top: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 123, 255, 0.05) 0%,
+        rgba(102, 126, 234, 0.05) 100%
+    );
+    padding: 4px;
+}
+
+.audioWrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    padding: 16px;
+    background: rgba(248, 249, 250, 0.95);
+}
+
+.audioWrapper:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Floating Download Button for Audio */
+.audioDownloadButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.audioWrapper:hover .audioDownloadButton {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.audioDownloadButton:hover {
+    background: rgba(0, 0, 0, 0.85);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.audioDownloadButton:active {
+    transform: scale(0.95);
+}
+
+.imageActions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: flex-end;
+}
+
+.iconButton {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    border-radius: 10px;
+    padding: 8px 16px;
+    color: #007bff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.iconButton:hover {
+    background: rgba(0, 123, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+}
+
+.iconButton:active {
+    transform: translateY(0);
+}
+
+/* Enhanced Input with Icon */
+.inputWithCounter {
+    position: relative;
+}
+
+.characterCounter {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    font-size: 12px;
+    color: #999;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+/* Loading Overlay */
+.loadingOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    z-index: 5;
+    animation: fadeIn 0.2s ease;
+}
+
+.loadingText {
+    margin-top: 16px;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Image Metadata */
+.imageMetadata {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 12px;
+    background: rgba(248, 249, 250, 0.6);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.metadataItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metadataLabel {
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.textInput {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.textInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}

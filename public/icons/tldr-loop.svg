@@ -1,0 +1,139 @@
+<svg width="400" height="512" viewBox="0 0 400 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filters for blurred color blobs -->
+    <filter id="filter0" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter1" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="37" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <!-- Mask for the droplet shape -->
+    <mask id="bulbMask" maskUnits="userSpaceOnUse">
+      <!-- Droplet shape - teardrop/water drop - maximized to fit canvas -->
+      <path d="M 200 10
+               C 200 10, 380 180, 380 320
+               C 380 420, 310 500, 200 500
+               C 90 500, 20 420, 20 320
+               C 20 180, 200 10, 200 10 Z"
+            fill="white"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#bulbMask)">
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 200 280"
+        to="360 200 280"
+        dur="3s"
+        repeatCount="indefinite"/>
+
+      <!-- Strong RED presence (LEFT SIDE) -->
+      <ellipse cx="100" cy="280" rx="250" ry="250" fill="#FF0000" filter="url(#filter0)"/>
+      <ellipse cx="125" cy="270" rx="230" ry="230" fill="#FF1744" filter="url(#filter1)"/>
+      <ellipse cx="110" cy="290" rx="240" ry="240" fill="#FF0022" filter="url(#filter2)"/>
+      <ellipse cx="130" cy="260" rx="220" ry="220" fill="#FF2244" filter="url(#filter3)"/>
+      <ellipse cx="115" cy="300" rx="225" ry="225" fill="#FF3355" filter="url(#filter1)"/>
+    </g>
+
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 200 280"
+        to="360 200 280"
+        dur="2s"
+        repeatCount="indefinite"/>
+
+      <!-- PINK layer -->
+      <ellipse cx="145" cy="280" rx="210" ry="210" fill="#FF4D6D" filter="url(#filter1)"/>
+      <ellipse cx="160" cy="270" rx="200" ry="200" fill="#FF5370" filter="url(#filter2)"/>
+
+      <!-- ORANGE transition - very prominent -->
+      <ellipse cx="175" cy="280" rx="205" ry="205" fill="#FF6600" filter="url(#filter1)"/>
+      <ellipse cx="190" cy="290" rx="200" ry="200" fill="#FF7700" filter="url(#filter2)"/>
+      <ellipse cx="180" cy="270" rx="195" ry="195" fill="#FF8800" filter="url(#filter1)"/>
+      <ellipse cx="195" cy="300" rx="190" ry="190" fill="#FF9933" filter="url(#filter3)"/>
+    </g>
+
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 200 280"
+        to="360 200 280"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+      <!-- YELLOW -->
+      <ellipse cx="215" cy="290" rx="190" ry="190" fill="#FFBB00" filter="url(#filter1)"/>
+      <ellipse cx="230" cy="280" rx="185" ry="185" fill="#FFCC00" filter="url(#filter2)"/>
+      <ellipse cx="240" cy="300" rx="180" ry="180" fill="#FFDD00" filter="url(#filter1)"/>
+
+      <!-- Yellow-green blend -->
+      <ellipse cx="255" cy="280" rx="180" ry="180" fill="#CCEE00" filter="url(#filter2)"/>
+      <ellipse cx="265" cy="270" rx="175" ry="175" fill="#AADD00" filter="url(#filter1)"/>
+
+      <!-- GREEN -->
+      <ellipse cx="280" cy="280" rx="185" ry="185" fill="#00DD44" filter="url(#filter2)"/>
+      <ellipse cx="295" cy="270" rx="180" ry="180" fill="#00DD66" filter="url(#filter1)"/>
+    </g>
+
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 200 280"
+        to="360 200 280"
+        dur="2s"
+        repeatCount="indefinite"/>
+
+      <!-- CYAN/Turquoise -->
+      <ellipse cx="315" cy="280" rx="185" ry="185" fill="#00CCBB" filter="url(#filter2)"/>
+      <ellipse cx="335" cy="270" rx="180" ry="180" fill="#00BBDD" filter="url(#filter1)"/>
+    </g>
+
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 200 280"
+        to="360 200 280"
+        dur="3s"
+        repeatCount="indefinite"/>
+
+      <!-- BLUE -->
+      <ellipse cx="355" cy="280" rx="175" ry="175" fill="#0099FF" filter="url(#filter2)"/>
+      <ellipse cx="375" cy="270" rx="180" ry="180" fill="#2196F3" filter="url(#filter0)"/>
+      <ellipse cx="390" cy="280" rx="165" ry="165" fill="#4488FF" filter="url(#filter1)"/>
+
+      <!-- Purple/Indigo -->
+      <ellipse cx="395" cy="260" rx="155" ry="155" fill="#6677FF" filter="url(#filter2)"/>
+      <ellipse cx="405" cy="250" rx="150" ry="150" fill="#7BA3FF" filter="url(#filter1)"/>
+    </g>
+  </g>
+</svg>

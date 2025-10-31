@@ -1,0 +1,32 @@
+/* Text Input Component Styles */
+
+.input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid var(--minerva-border-light);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: white;
+    color: var(--minerva-text-dark);
+    transition: var(--minerva-transition-smooth);
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input::placeholder {
+    color: var(--minerva-text-muted);
+}
+
+/* Larger input variant */
+.input--large {
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+}

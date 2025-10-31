@@ -1,0 +1,33 @@
+/* Copy Button Component Styles */
+
+.button {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* Copy animation */
+@keyframes copyScaleFade {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2) translate(-8px, 8px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2) translate(-12px, 12px);
+        opacity: 0;
+    }
+}
+
+.animate {
+    animation: copyScaleFade 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

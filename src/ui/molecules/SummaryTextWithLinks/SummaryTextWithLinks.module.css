@@ -1,0 +1,15 @@
+/* Summary Text with Links Component Styles */
+
+.text {
+    word-wrap: break-word;
+    color: #ffffff;
+}
+
+.link {
+    color: #87ceeb;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,97 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Filters for blurred color blobs -->
+        <filter id="filter0" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur"/>
+        </filter>
+
+        <filter id="filter1" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur"/>
+        </filter>
+
+        <filter id="filter2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="37" result="effect1_foregroundBlur"/>
+        </filter>
+
+        <filter id="filter3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur"/>
+        </filter>
+
+        <!-- Mask for the settings/gear shape -->
+        <mask id="settingsMask" maskUnits="userSpaceOnUse">
+            <!-- Settings gear icon -->
+            <g fill="white">
+                <!-- Outer gear teeth - scaled from reference -->
+                <path d="M 231 64
+                 L 282 102 L 307 64 L 320 115 L 358 90 L 346 141
+                 L 397 141 L 371 179 L 422 205 L 384 231
+                 L 422 282 L 371 307 L 397 346 L 346 346
+                 L 358 397 L 307 371 L 282 422 L 256 384
+                 L 231 422 L 205 371 L 154 397 L 166 346
+                 L 115 346 L 141 307 L 90 282 L 128 231
+                 L 90 205 L 141 179 L 115 141 L 166 141
+                 L 154 90 L 192 115 L 231 64 Z"/>
+
+                <!-- Center circle (hole) - this will be cut out -->
+                <circle cx="256" cy="256" r="77" fill="black"/>
+
+                <!-- Outer circle to complete the gear -->
+                <circle cx="256" cy="256" r="141" fill="white"/>
+                <circle cx="256" cy="256" r="77" fill="black"/>
+            </g>
+        </mask>
+    </defs>
+
+    <g mask="url(#settingsMask)">
+        <!-- Strong RED presence (LEFT SIDE) -->
+        <ellipse cx="106" cy="256" rx="280" ry="280" fill="#FF0000" filter="url(#filter0)"/>
+        <ellipse cx="126" cy="250" rx="265" ry="265" fill="#FF1744" filter="url(#filter1)"/>
+        <ellipse cx="112" cy="262" rx="272" ry="272" fill="#FF0022" filter="url(#filter2)"/>
+        <ellipse cx="133" cy="244" rx="252" ry="252" fill="#FF2244" filter="url(#filter3)"/>
+        <ellipse cx="119" cy="268" rx="259" ry="259" fill="#FF3355" filter="url(#filter1)"/>
+
+        <!-- PINK layer -->
+        <ellipse cx="153" cy="256" rx="245" ry="245" fill="#FF4D6D" filter="url(#filter1)"/>
+        <ellipse cx="172" cy="250" rx="238" ry="238" fill="#FF5370" filter="url(#filter2)"/>
+
+        <!-- ORANGE transition - very prominent -->
+        <ellipse cx="193" cy="256" rx="238" ry="238" fill="#FF6600" filter="url(#filter1)"/>
+        <ellipse cx="212" cy="262" rx="231" ry="231" fill="#FF7700" filter="url(#filter2)"/>
+        <ellipse cx="199" cy="250" rx="231" ry="231" fill="#FF8800" filter="url(#filter1)"/>
+        <ellipse cx="219" cy="268" rx="224" ry="224" fill="#FF9933" filter="url(#filter3)"/>
+
+        <!-- YELLOW -->
+        <ellipse cx="246" cy="256" rx="224" ry="224" fill="#FFBB00" filter="url(#filter1)"/>
+        <ellipse cx="266" cy="250" rx="217" ry="217" fill="#FFCC00" filter="url(#filter2)"/>
+        <ellipse cx="279" cy="262" rx="210" ry="210" fill="#FFDD00" filter="url(#filter1)"/>
+
+        <!-- Yellow-green blend -->
+        <ellipse cx="299" cy="256" rx="210" ry="210" fill="#CCEE00" filter="url(#filter2)"/>
+        <ellipse cx="312" cy="250" rx="203" ry="203" fill="#AADD00" filter="url(#filter1)"/>
+
+        <!-- GREEN -->
+        <ellipse cx="332" cy="256" rx="210" ry="210" fill="#00DD44" filter="url(#filter2)"/>
+        <ellipse cx="352" cy="250" rx="203" ry="203" fill="#00DD66" filter="url(#filter1)"/>
+
+        <!-- CYAN/Turquoise -->
+        <ellipse cx="379" cy="256" rx="210" ry="210" fill="#00CCBB" filter="url(#filter2)"/>
+        <ellipse cx="405" cy="250" rx="203" ry="203" fill="#00BBDD" filter="url(#filter1)"/>
+
+        <!-- BLUE -->
+        <ellipse cx="432" cy="256" rx="196" ry="196" fill="#0099FF" filter="url(#filter2)"/>
+        <ellipse cx="459" cy="250" rx="203" ry="203" fill="#2196F3" filter="url(#filter0)"/>
+        <ellipse cx="479" cy="256" rx="189" ry="189" fill="#4488FF" filter="url(#filter1)"/>
+
+        <!-- Purple/Indigo -->
+        <ellipse cx="485" cy="244" rx="182" ry="182" fill="#6677FF" filter="url(#filter2)"/>
+        <ellipse cx="499" cy="238" rx="175" ry="175" fill="#7BA3FF" filter="url(#filter1)"/>
+    </g>
+</svg>

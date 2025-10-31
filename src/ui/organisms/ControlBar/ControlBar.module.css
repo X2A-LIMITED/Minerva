@@ -1,0 +1,210 @@
+/* Control Bar Component Styles */
+
+.bar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    color: var(--minerva-text-dark);
+    background: var(--minerva-bg-white);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--minerva-border-light);
+    border-radius: 24px;
+    box-shadow: var(--minerva-shadow-md), var(--minerva-shadow-sm);
+    z-index: var(--minerva-control-bar-z);
+    opacity: 1;
+    transition:
+        var(--minerva-transition-fade),
+        box-shadow 0.2s ease;
+    cursor: grab;
+    user-select: none;
+    padding: 12px;
+    overflow: visible;
+}
+
+.bar.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.bar.dragging {
+    cursor: grabbing;
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: none;
+}
+
+/* Main Items Row */
+.main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Legacy sections - hiding for compatibility */
+.left,
+.center,
+.right {
+    display: none;
+}
+
+/* Close Button */
+.closeButton {
+    background: var(--minerva-button-bg);
+    border: 1px solid var(--minerva-border-subtle);
+    color: var(--minerva-text-muted);
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: var(--minerva-transition-smooth);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton:hover {
+    background: var(--minerva-gradient-danger);
+    color: white;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--minerva-shadow-danger);
+}
+
+/* Area Select Button */
+.areaSelectButton {
+    background: var(--minerva-button-bg);
+    border: 1px solid var(--minerva-border-subtle);
+    color: var(--minerva-text-muted);
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: var(--minerva-transition-smooth);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.areaSelectButton:hover {
+    background: var(--minerva-gradient-primary);
+    color: white;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--minerva-shadow-button);
+}
+
+.areaSelectButton.active {
+    background: var(--minerva-gradient-primary);
+    color: white;
+    box-shadow: var(--minerva-shadow-button-hover);
+}
+
+/* Settings Button */
+.settingsButton {
+    background: var(--minerva-button-bg);
+    border: 1px solid var(--minerva-border-subtle);
+    color: var(--minerva-text-muted);
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: var(--minerva-transition-smooth);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settingsButton:hover {
+    background: var(--minerva-gradient-primary);
+    color: white;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--minerva-shadow-button);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .bar {
+        padding: 16px 24px;
+        max-width: 500px;
+    }
+
+    .main {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bar {
+        padding: 14px 20px;
+        max-width: 400px;
+    }
+
+    .main {
+        gap: 16px;
+    }
+
+    .closeButton {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bar {
+        padding: 10px 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .center {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .left {
+        order: 1;
+    }
+
+    .right {
+        order: 2;
+        margin-left: 0;
+    }
+
+    .closeButton {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .bar {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+}

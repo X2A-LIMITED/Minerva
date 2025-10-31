@@ -1,0 +1,34 @@
+/* Control Item With Toggle Component Styles */
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    transition: var(--minerva-transition-smooth);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Remove default hover from icon when it contains toggle */
+.icon:has(.toggle):hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+.toggle:hover {
+    transform: scale(1.05);
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--minerva-text-dark);
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

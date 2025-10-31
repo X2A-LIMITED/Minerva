@@ -1,0 +1,42 @@
+/* Navigation Controls Component Styles */
+
+.container {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    margin-left: 6px;
+}
+
+.button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.button:disabled {
+    opacity: 0.35;
+    cursor: default;
+    transform: none;
+}
+
+.label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    width: 48px;
+    text-align: center;
+}
