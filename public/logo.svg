@@ -1,0 +1,83 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filters for blurred color blobs -->
+    <filter id="filter0" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter1" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="37" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <filter id="filter3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur"/>
+    </filter>
+
+    <!-- Mask for the speech bubble -->
+    <mask id="bubbleMask" maskUnits="userSpaceOnUse">
+      <path d="M 100 50 
+               L 450 50 
+               Q 500 50 500 100
+               L 500 325
+               Q 500 375 450 375
+               L 280 375
+               L 215 475
+               L 180 375
+               L 100 375
+               Q 50 375 50 325
+               L 50 100
+               Q 50 50 100 50 Z"
+            fill="white" />
+    </mask>
+  </defs>
+
+  <g mask="url(#bubbleMask)">
+      <!-- Strong red/pink presence (more centered) - multiple layers -->
+      <ellipse cx="275" cy="225" rx="360" ry="360" fill="#FF1744" filter="url(#filter0)"/>
+      <ellipse cx="295" cy="245" rx="240" ry="440" fill="#FF4D6D" filter="url(#filter1)"/>
+      <ellipse cx="415" cy="330" rx="230" ry="430" fill="#FF5370" filter="url(#filter2)"/>
+      <ellipse cx="400" cy="375" rx="320" ry="420" fill="#FF6B88" filter="url(#filter3)"/>
+
+      <!-- Red to orange transition -->
+      <ellipse cx="240" cy="195" rx="110" ry="110" fill="#FF7043" filter="url(#filter1)"/>
+      <ellipse cx="225" cy="235" rx="120" ry="120" fill="#FF8A50" filter="url(#filter2)"/>
+
+      <!-- Orange to yellow -->
+      <ellipse cx="215" cy="260" rx="130" ry="130" fill="#FFB800" filter="url(#filter1)"/>
+
+      <!-- Bright yellow (bottom left area) -->
+      <ellipse cx="195" cy="310" rx="150" ry="150" fill="#FFC800" filter="url(#filter2)"/>
+      <ellipse cx="255" cy="290" rx="120" ry="120" fill="#FFD520" filter="url(#filter1)"/>
+
+      <!-- Yellow-green blend -->
+      <ellipse cx="255" cy="250" rx="125" ry="125" fill="#C0E000" filter="url(#filter2)"/>
+
+      <!-- Green (center-bottom) -->
+      <ellipse cx="290" cy="270" rx="140" ry="140" fill="#00DC82" filter="url(#filter1)"/>
+
+      <!-- Turquoise/Cyan (center) -->
+      <ellipse cx="330" cy="210" rx="130" ry="130" fill="#00CDB8" filter="url(#filter2)"/>
+
+      <!-- Cyan to blue transition -->
+      <ellipse cx="367" cy="230" rx="130" ry="130" fill="#00B4E6" filter="url(#filter1)"/>
+
+      <!-- Blue (right side) -->
+      <ellipse cx="505" cy="230" rx="250" ry="250" fill="#2196F3" filter="url(#filter0)"/>
+      <ellipse cx="527" cy="215" rx="130" ry="30" fill="#5B9FFF" filter="url(#filter2)"/>
+
+      <!-- Blue-purple (top right) -->
+      <ellipse cx="442" cy="190" rx="120" ry="120" fill="#7BA3FF" filter="url(#filter1)"/>
+  </g>
+</svg>

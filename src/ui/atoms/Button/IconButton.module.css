@@ -1,0 +1,84 @@
+/* Icon Button Component Styles */
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 12px;
+    background: var(--minerva-button-bg);
+    transition: var(--minerva-transition-smooth);
+    cursor: pointer;
+}
+
+.icon:hover {
+    background: var(--minerva-gradient-primary);
+    box-shadow: var(--minerva-shadow-button-hover);
+}
+
+.icon.active {
+    background: var(--minerva-gradient-primary);
+    box-shadow: var(--minerva-shadow-button-hover);
+}
+
+.icon.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Emoji variant */
+.emoji {
+    font-size: 28px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-family:
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji',
+        'Android Emoji', 'EmojiSymbols', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sizes */
+.icon--sm {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+}
+
+.icon--md {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+}
+
+.icon--lg {
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .icon--md {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon--md {
+        width: 40px;
+        height: 40px;
+    }
+}

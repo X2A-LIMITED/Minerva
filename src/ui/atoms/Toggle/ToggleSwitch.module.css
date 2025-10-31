@@ -1,0 +1,110 @@
+/* Toggle Switch Component Styles */
+
+/* Container with label */
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Label */
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--minerva-text-dark);
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Switch Track */
+.switch {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    background: var(--minerva-button-bg);
+    border: 2px solid var(--minerva-border-subtle);
+    border-radius: 14px;
+    transition: var(--minerva-transition-smooth);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switch.active {
+    background: var(--minerva-gradient-primary);
+    border-color: transparent;
+    box-shadow: var(--minerva-shadow-button);
+}
+
+/* Switch Thumb */
+.thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: var(--minerva-transition-smooth);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active .thumb {
+    transform: translateX(24px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* Hover effect */
+.toggle:hover:not(.disabled) .switch {
+    transform: scale(1.05);
+}
+
+.toggle:hover:not(.disabled) .switch.active {
+    box-shadow: var(--minerva-shadow-button-hover);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .label {
+        font-size: 12px;
+    }
+
+    .switch {
+        width: 46px;
+        height: 24px;
+    }
+
+    .thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    .switch.active .thumb {
+        transform: translateX(22px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .label {
+        font-size: 11px;
+    }
+
+    .switch {
+        width: 42px;
+        height: 22px;
+    }
+
+    .thumb {
+        width: 16px;
+        height: 16px;
+    }
+
+    .switch.active .thumb {
+        transform: translateX(20px);
+    }
+}

@@ -1,0 +1,35 @@
+/* Logo Component Styles */
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .logo {
+        width: 28px;
+        height: 28px;
+    }
+}

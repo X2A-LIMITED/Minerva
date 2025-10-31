@@ -1,0 +1,37 @@
+/* Draggable Component Styles - Performance Optimization */
+
+/* Reduce backdrop-filter intensity and disable transitions while dragging */
+.dragging,
+.dragging * {
+    /* Reduce blur for better performance */
+    backdrop-filter: blur(20px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
+
+    /* Disable all transitions during drag */
+    transition: none !important;
+    animation: none !important;
+
+    /* Use GPU acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Simplify shadows during drag */
+.dragging {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Disable pointer events on children during drag */
+.dragging * {
+    pointer-events: none !important;
+}
+
+/* Allow pointer events on the dragging element itself */
+.dragging {
+    pointer-events: auto !important;
+}
+
+/* Optimize scrolling performance */
+.dragging ::-webkit-scrollbar {
+    display: none;
+}

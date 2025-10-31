@@ -1,0 +1,32 @@
+/* Prompt Component Styles */
+
+.controls {
+    display: none;
+    margin-top: 12px;
+    gap: 8px;
+    align-items: center;
+}
+
+.input {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+.send {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.send:hover {
+    background: rgba(255, 255, 255, 0.35);
+}

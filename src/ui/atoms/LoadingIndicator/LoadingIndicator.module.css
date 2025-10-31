@@ -1,0 +1,9 @@
+/* Loading Indicator Component Styles */
+
+.indicator {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    margin-right: 8px;
+    vertical-align: middle;
+}

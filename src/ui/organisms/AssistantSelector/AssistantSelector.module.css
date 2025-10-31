@@ -1,0 +1,50 @@
+/* Assistant Selector Component Styles */
+
+.expand {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.expand.expanded {
+    max-height: 400px;
+}
+
+.expand.expandUp {
+    bottom: 100%;
+    margin-bottom: 8px;
+}
+
+.expand.expandDown {
+    top: 100%;
+    margin-top: 8px;
+}
+
+.content {
+    padding: 20px;
+    background: var(--minerva-bg-white);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--minerva-border-light);
+    border-radius: 16px;
+    box-shadow: var(--minerva-shadow-md);
+}
+
+.heading {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--minerva-text-dark);
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 12px;
+}

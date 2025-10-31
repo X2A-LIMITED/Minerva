@@ -1,0 +1,90 @@
+{
+    "manifest_version": 3,
+    "name": "Minerva",
+    "version": "1.0",
+    "description": "Chat, summarize, translate, and create — anytime, anywhere.",
+    "trial_tokens": [
+        ""
+    ],
+    "permissions": ["storage"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+        "default_icon": {
+            "16": "logo-16.png",
+            "48": "logo-48.png",
+            "128": "logo-128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "logo-16.png",
+        "48": "logo-48.png",
+        "128": "logo-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "css": ["content.css"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "page-script.js",
+                "logo-16.png",
+                "logo-48.png",
+                "logo-128.png",
+                "logo-loop.svg",
+                "logo.svg",
+                "copy.svg",
+                "undo.svg",
+                "check.svg",
+                "personality/kid.svg",
+                "personality/gandalf.svg",
+                "icons/audio-playing.svg",
+                "icons/audio.svg",
+                "icons/gen.svg",
+                "icons/gen-loop.svg",
+                "icons/tldr.svg",
+                "icons/tldr-loop.svg",
+                "icons/tldr-16.webp",
+                "icons/settings.svg",
+                "voices/Achernar.wav",
+                "voices/Achird.wav",
+                "voices/Algenib.wav",
+                "voices/Algieba.wav",
+                "voices/Alnilam.wav",
+                "voices/Aoede.wav",
+                "voices/Autonoe.wav",
+                "voices/Callirrhoe.wav",
+                "voices/Charon.wav",
+                "voices/Despina.wav",
+                "voices/Enceladus.wav",
+                "voices/Erinome.wav",
+                "voices/Fenrir.wav",
+                "voices/Gacrux.wav",
+                "voices/Iapetus.wav",
+                "voices/Kore.wav",
+                "voices/Laomedeia.wav",
+                "voices/Leda.wav",
+                "voices/Orus.wav",
+                "voices/Puck.wav",
+                "voices/Pulcherrima.wav",
+                "voices/Rasalgethi.wav",
+                "voices/Sadachbia.wav",
+                "voices/Sadaltager.wav",
+                "voices/Schedar.wav",
+                "voices/Sulafat.wav",
+                "voices/Umbriel.wav",
+                "voices/Vindemiatrix.wav",
+                "voices/Zubenelgenubi.wav",
+                "voices/Zephyr.wav"
+            ],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}

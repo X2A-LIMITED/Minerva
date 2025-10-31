@@ -1,0 +1,84 @@
+/* Button Component Styles */
+
+.button {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: var(--minerva-transition-smooth);
+    white-space: nowrap;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Variants */
+.button--primary {
+    background: var(--minerva-gradient-primary);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--minerva-shadow-button);
+}
+
+.button--primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--minerva-shadow-button-hover);
+}
+
+.button--secondary {
+    background: var(--minerva-button-bg);
+    border: 1px solid var(--minerva-border-subtle);
+    color: var(--minerva-text-dark);
+}
+
+.button--secondary:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+    box-shadow: var(--minerva-shadow-sm);
+}
+
+.button--danger {
+    background: var(--minerva-gradient-danger);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--minerva-shadow-danger);
+}
+
+.button--danger:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--minerva-shadow-danger);
+}
+
+.button--ghost {
+    background: transparent;
+    border: none;
+    color: var(--minerva-text-dark);
+}
+
+.button--ghost:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Sizes */
+.button--sm {
+    font-size: 11px;
+    padding: 5px 8px;
+}
+
+.button--md {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.button--lg {
+    font-size: 16px;
+    padding: 14px 28px;
+}
